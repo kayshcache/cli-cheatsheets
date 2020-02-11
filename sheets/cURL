@@ -14,6 +14,6 @@ curl --request POST \
   -d 'key1=value1&key2=value2'
 
 # Post request sending raw JSON data
-curl -X POST localhost:8000 -H 'Content-Type: application/json' --data-raw '{
+curl -X POST http://api.host.tld:4040 -H 'Content-Type: application/json' --data-raw '{
     "message": "JSON says Hi"
   }'
