@@ -1,6 +1,22 @@
+-X flag = request type GET, POST, DELETE etc.
+-H common headers for testing APIs are:
+  'Content-Type: application/x-www-form-urlencoded'
+  'Content-Type: application/json'
+JSON sent as raw data needs the flag --data-raw
+otherwise the data can be flagged with -d in most cases.
+\ using backslash makes the command more readable as multiline
+
 curl -X POST \
   http://api.host.tld:4040 \
   -H 'Accept: */*' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -H 'cache-control: no-cache' \
   -d 'key1=value1&key2=value2'
+
+# Post request sending raw JSON data
+curl -X POST \
+  localhost:8000 \
+  -H 'Content-Type: application/json' \
+  --data-raw '{
+    "message": "JSON says Hi"
+  }'
